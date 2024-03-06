@@ -43,8 +43,8 @@ def check_sana_temple_folder():
 
 clear_screen()
 print_slowly("Welcome to the world of Sana...")
-time.sleep(1.5)
 print_slowly("Loading...")
+time.sleep(1.5)
 clear_screen()
 print("____________________________")
 time.sleep(1)   
@@ -60,7 +60,7 @@ print("----------------------------")
 time.sleep(2)
 
 # Ask the user to press Enter
-input("To continue, please type your name then press enter")
+input("What is your name?")
 
 clear_screen()
 # Display a message
