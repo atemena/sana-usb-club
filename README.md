@@ -1,6 +1,6 @@
 # Sana - Simula - A Whole New World
 
-Sana, meaning "to hope for" or "wish" in tagalog, is a proof of concept for a new, more open framework for NFTs. The entire world of Sana is curated and can be edited by you, the user. This is our hopeful vision for the future of NFTs.
+Sana, meaning "to hope for" or "wish" in tagalog, is a proof of concept for a new, more open framework for NFTs. The entire world of Sana is curated and can be edited by you, the user.
 
 ## Getting Started
 
