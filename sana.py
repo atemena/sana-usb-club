@@ -150,7 +150,7 @@ while True:
         time.sleep(0.5)
         print("Alternatively delete all of them and replace them with your own!")
         time.sleep(0.5)
-        input("Press enter when you've selected your photo.")
+        input("Press enter when you've selected your temple.")
     else:
         # Get the path of the temple image
         temple_path = get_temple_path()
