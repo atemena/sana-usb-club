@@ -2,6 +2,7 @@ import os
 import webbrowser
 import time
 import user_profile
+import platform
 
 CYPHER_STORE_URL='http://sana.dubbed.tech'
 
@@ -15,27 +16,31 @@ def print_slowly(text, delay=0.05):
 # Clear the screen
 def clear_screen():
     # For Windows
-    if os.name == 'nt':
+    if platform.system() == 'Windows':
         os.system('cls')
     # For macOS and Linux
     else:
         os.system('clear')
 
+# Get the directory of the script
+script_dir = os.path.dirname(os.path.realpath(__file__))
+sana_temple_dir = os.path.join(script_dir, 'sana_temple')
+cyphers_dir = os.path.join(script_dir, 'cyphers')
+
 # Function to check the sana_temple folder
 def num_files_in_sana_temple_folder():
-    folder_path = 'sana_temple'
-    png_files = [f for f in os.listdir(folder_path) if f.endswith('.png')]
+    png_files = [f for f in os.listdir(sana_temple_dir) if f.endswith('.png')]
     return len(png_files)
 
 def get_temple_path():
-    for file in os.listdir('sana_temple'):
+    for file in os.listdir(sana_temple_dir):
         if file.endswith('.png'):
             return os.path.join('sana_temple', file)
     return None
 
 def save_cyphers_to_profile():
     # Get the list of PNG files in the 'cyphers' folder
-    cypher_files = [f for f in os.listdir('cyphers') if f.endswith('.png')]
+    cypher_files = [f for f in os.listdir(cyphers_dir) if f.endswith('.png')]
 
     # Create a list of cyphers
     cyphers = []
@@ -48,7 +53,7 @@ def save_cyphers_to_profile():
         cypher = {
             'name': name,
             'species': species,
-            'path': os.path.join('cyphers', file)
+            'path': os.path.join(script_dir,'cyphers', file)
         }
         cyphers.append(cypher)
 
@@ -57,7 +62,7 @@ def save_cyphers_to_profile():
 
 def num_files_in_cyphers_folder():
     # Get the list of files in the 'cyphers' folder
-    files = os.listdir('cyphers')
+    files = os.listdir(cyphers_dir)
 
     # Count the number of PNG files
     png_files = [f for f in files if f.endswith('.png')]
@@ -84,10 +89,17 @@ def cypher_copy():
     else:
         return "Cyphers appear"
 
+def ensure_dir(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
 clear_screen()
 print_slowly("Welcome to the world of Sana")
 print_slowly("press control-c to exit at any time.")
 print_slowly("Loading core memory...")
+ensure_dir(sana_temple_dir)
+ensure_dir(cyphers_dir)
 time.sleep(1.5)
 clear_screen()
 print("____________________________")
