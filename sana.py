@@ -5,6 +5,8 @@ import user_profile
 import platform
 
 CYPHER_STORE_URL='http://sana.dubbed.tech'
+# Get the directory of the executable
+exe_dir = os.path.dirname(sys.executable)
 
 # Function to print each letter with a delay
 def print_slowly(text, delay=0.05):
@@ -23,9 +25,8 @@ def clear_screen():
         os.system('clear')
 
 # Get the directory of the script
-script_dir = os.path.dirname(os.path.realpath(__file__))
-sana_temple_dir = os.path.join(script_dir, 'sana_temple')
-cyphers_dir = os.path.join(script_dir, 'cyphers')
+sana_temple_dir = os.path.join(exe_dir, 'sana_temple')
+cyphers_dir = os.path.join(exe_dir, 'cyphers')
 
 # Function to check the sana_temple folder
 def num_files_in_sana_temple_folder():
@@ -53,7 +54,7 @@ def save_cyphers_to_profile():
         cypher = {
             'name': name,
             'species': species,
-            'path': os.path.join(script_dir,'cyphers', file)
+            'path': os.path.join(exe_dir,'cyphers', file)
         }
         cyphers.append(cypher)
 
@@ -90,6 +91,9 @@ def cypher_copy():
         return "Cyphers appear"
 
 def ensure_dir(directory):
+    
+    print(f"Creating directory at: {directory}")
+    print(f"Current working directory: {os.getcwd()}")
     if not os.path.exists(directory):
         os.makedirs(directory)
 
@@ -171,6 +175,8 @@ while True:
         user_profile.set_key('temple', temple_path)
 
         break
+
+clear_screen()
 print_slowly("Great, you've chosen your first temple. Temples in Sana represent our heads and our hearts.")
 print_slowly("Where our most hopeful ideas that are closest to our hearts reside and realize themselves into creatures called Cyphers.")
 print_slowly("Cyphers grow and change with us as we share them with people.")
@@ -221,5 +227,7 @@ print_slowly("Your journey has only just begun.")
 print_slowly("Your data lives in your `sana_profile.json` file.")
 print_slowly("You can access your profile at any time or change it by going through this core memory again.")
 print_slowly("Stay tuned for more ways to interact with Sana and your Cyphers soon!")
+time.sleep(2)
+print_slowly("Thank you for joining us on this adventure. Goodbye!")
 
 
