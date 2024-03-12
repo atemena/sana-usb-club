@@ -4,7 +4,7 @@ Sana, meaning "to hope for" or "wish" in tagalog, is a proof of concept for a ne
 
 ## Getting Started
 
-To get started with Sana, simply open the appropriate executable for your operating system:
+To get started with Sana, simply download the [zip file](Sana-Simula.zip), extract it, and open the appropriate executable for your operating system:
 
 - For macOS users, open `sana_mac_os`
 - For Windows users, open `sana_windows.exe`
