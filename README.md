@@ -15,7 +15,9 @@ Sana is created by [ghouliemac](https://www.instagram.com/ghouliemac), founder o
 
 ## Special Thanks
 
-Special thanks to USB club for creating a platform that would allow for something like this to be accessible. And for gathering a community that might actually be interested in this idea.
+Special thanks to [USB club](https://usbclub.net/) for creating a platform that would allow for something like this to be accessible and gathering a community that might actually be interested in this idea.
+
+Special thanks to [@LloydieCat](https://www.instagram.com/lloydiecat) for creating dope fonts and keeping Baybayin alive!
 
 ## What's Next?
 
